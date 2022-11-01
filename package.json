@@ -1,0 +1,13 @@
+{
+  "name": "yew-app",
+  "version": "0.1.0",
+  "author": "You <you@example.com>",
+  "scripts": {
+    "build": "trunk build --release",
+    "serve": "trunk serve"
+  },
+  "devDependencies": {
+    "sass": "1.55.0",
+    "typescript": "4.8.4"
+  }
+}
