@@ -28,8 +28,8 @@ jobs:
       - name: Build Site
         run: ./trunk build --release
 
-      - name: Deploy GitHub Pages site
-        uses: actions/deploy-pages@v1.2.2
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
           # Name of the artifact to deploy
-          artifact_name: dist/
+          folder: dist
