@@ -20,6 +20,8 @@ const filesToCache = [
   'icons/favicon-16x16.png',
   'icons/favicon-384x384.png',
   'icons/mstile-150x150.png',
+  'icons/maskable-icon-x48.png',
+  'icons/maskable-icon-x72.png',
 ];
 
 /* Start the service worker and cache all of the app's content */
