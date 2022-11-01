@@ -84,6 +84,13 @@ nav li {
   border-radius: 50%;
   border: none;
 
+  padding: 0;
+
+  // Only add padding to bottom on Firefox
+  @-moz-document url-prefix() {
+    padding-bottom: 1rem;
+  }
+
   transition: background-color 0.2s;
   transition: transform 0.2s;
 
