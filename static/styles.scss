@@ -64,14 +64,19 @@ nav li {
 }
 
 .config {
-  display: flex;
+  form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-  @media screen and (orientation: portrait) {
-    flex-direction: column;
+    @media screen and (orientation: portrait) {
+      flex-direction: column;
+    }
+
+    label {
+      font-weight: 300;
+    }
   }
-
-  align-items: center;
-  justify-content: center;
 
   :nth-child(2),
   :nth-child(4) {

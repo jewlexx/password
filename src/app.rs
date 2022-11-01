@@ -117,13 +117,15 @@ pub fn app() -> Html {
         <div class="main-container">
             <h1>{ "Password Generator" }</h1>
             <div class="config">
-                <h2>{ format!("Length ({})", config_raw.length) }</h2>
-                <input label="Length of password" type="range" min="1" max="128" value={config_raw.length.to_string()} oninput={oninput_len} />
+                <form>
+                    <label>{ format!("Length ({})", config_raw.length) }</label>
+                    <input type="range" min="1" max="128" value={config_raw.length.to_string()} oninput={oninput_len} />
 
-                <h2>{ format!("Count ({})", config_raw.count) }</h2>
-                <input label="Number of passwords" type="range" min="1" max="10" value={config_raw.count.to_string()} oninput={oninput_count} />
+                    <label>{ format!("Count ({})", config_raw.count) }</label>
+                    <input type="range" min="1" max="10" value={config_raw.count.to_string()} oninput={oninput_count} />
 
-                <button class="regenerate" {onclick}>{ "↻" }</button>
+                    <button class="regenerate" {onclick}>{ "↻" }</button>
+                </form>
             </div>
 
             <Password passwords={passwords} />

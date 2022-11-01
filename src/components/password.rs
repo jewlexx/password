@@ -11,7 +11,7 @@ pub fn password(props: &PasswordProps) -> Html {
     let passwords = props.passwords.iter().map(|password| {
         html! {
             <>
-                {password}<br/><br/>
+                {password}<br/>
             </>
         }
     });
