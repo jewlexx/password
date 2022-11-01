@@ -11,9 +11,13 @@
     <link data-trunk rel="copy-file" href="./static/sw.js" />
 
     <script>
-      if ('serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/sw.js');
-      }
+      window.registerSW = function () {
+        if ('serviceWorker' in navigator) {
+          console.time('Service Worker Registration');
+          navigator.serviceWorker.register('/sw.js');
+          console.timeEnd('Service Worker Registration');
+        }
+      };
     </script>
 
     <link
