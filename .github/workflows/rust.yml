@@ -17,8 +17,6 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Trunk
         run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.16.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
-      - name: Run tests
-        run: cargo test --verbose
       - name: Build Site
         run: ./trunk build --release
 
