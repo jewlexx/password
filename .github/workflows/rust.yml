@@ -2,29 +2,28 @@ name: Rust
 
 on:
   push:
-    branches: [ "trunk" ]
+    branches: ['trunk']
   pull_request:
-    branches: [ "trunk" ]
+    branches: ['trunk']
 
 env:
   CARGO_TERM_COLOR: always
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Install Trunk
-      run: cargo install --locked trunk
-    - name: Run tests
-      run: cargo test --verbose
-    - name: Build Site
-      run: trunk build --release
-      
-    - name: Deploy GitHub Pages site
-      uses: actions/deploy-pages@v1.2.2
-      with:
-        # Name of the artifact to deploy
-        artifact_name: dist/
+      - uses: actions/checkout@v3
+      - name: Install Trunk
+        run: wget -qO- https://github.com/thedodd/trunk/releases/download/v0.16.0/trunk-x86_64-unknown-linux-gnu.tar.gz | tar -xzf-
+      - name: Run tests
+        run: cargo test --verbose
+      - name: Build Site
+        run: ./trunk build --release
+
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v1.2.2
+        with:
+          # Name of the artifact to deploy
+          artifact_name: dist/
