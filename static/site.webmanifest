@@ -3,8 +3,13 @@
     "short_name": "Password Generator",
     "icons": [
         {
-            "src": "android-chrome-96x96.png",
+            "src": "icons/android-chrome-96x96.png",
             "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "icons/favicon-384x384.png",
+            "sizes": "384x384",
             "type": "image/png"
         }
     ],
