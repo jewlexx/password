@@ -69,10 +69,10 @@ pub fn app() -> Html {
 
     println!("{password}");
 
-    let oninput_len = {
+    let oninput_len = Callback::from({
         let config = config.clone();
 
-        Callback::from(move |e: InputEvent| {
+        move |e: InputEvent| {
             let input: HtmlInputElement = e.target_unchecked_into();
 
             debug!("Input changed to: {}", input.value());
@@ -83,25 +83,21 @@ pub fn app() -> Html {
                 length: input.value_as_number() as usize,
                 ..old_config
             });
-        })
-    };
+        }
+    });
 
-    let oninput_count = {
-        let config = config;
+    let oninput_count = Callback::from(move |e: InputEvent| {
+        let input: HtmlInputElement = e.target_unchecked_into();
 
-        Callback::from(move |e: InputEvent| {
-            let input: HtmlInputElement = e.target_unchecked_into();
+        debug!("Input changed to: {}", input.value());
 
-            debug!("Input changed to: {}", input.value());
+        let old_config = *config;
 
-            let old_config = *config;
-
-            config.set(GenConf {
-                count: input.value_as_number() as usize,
-                ..old_config
-            });
-        })
-    };
+        config.set(GenConf {
+            count: input.value_as_number() as usize,
+            ..old_config
+        });
+    });
 
     let onclick = {
         Callback::from(move |_| {
