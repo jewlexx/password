@@ -19,6 +19,8 @@ const filesToCache = [
   'icons/apple-touch-icon.png',
   'icons/favicon-16x16.png',
   'icons/favicon-384x384.png',
+  'icons/favicon-512x512.png',
+  'icons/favicon-768x768.png',
   'icons/mstile-150x150.png',
   'icons/maskable-icon-x48.png',
   'icons/maskable-icon-x72.png',

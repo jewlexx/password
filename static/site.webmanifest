@@ -23,6 +23,11 @@
             "sizes": "72x72",
             "type": "image/png",
             "purpose": "maskable"
+        },
+        {
+            "src": "icons/favicon-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
         }
     ],
     "start_url": "/",
