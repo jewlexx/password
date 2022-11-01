@@ -114,14 +114,14 @@ pub fn app() -> Html {
         .collect::<Vec<_>>();
 
     html! {
-        <div>
+        <div class="main-container">
             <h1>{ "Password Generator" }</h1>
             <div class="config">
-                <h3>{ format!("Length ({})", config_raw.length) }</h3>
-                <input type="range" min="1" max="128" value={config_raw.length.to_string()} oninput={oninput_len} />
+                <h2>{ format!("Length ({})", config_raw.length) }</h2>
+                <input label="Length of password" type="range" min="1" max="128" value={config_raw.length.to_string()} oninput={oninput_len} />
 
-                <h3>{ format!("Count ({})", config_raw.count) }</h3>
-                <input type="range" min="1" max="10" value={config_raw.count.to_string()} oninput={oninput_count} />
+                <h2>{ format!("Count ({})", config_raw.count) }</h2>
+                <input label="Number of passwords" type="range" min="1" max="10" value={config_raw.count.to_string()} oninput={oninput_count} />
 
                 <button class="regenerate" {onclick}>{ "↻" }</button>
             </div>
