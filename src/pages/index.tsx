@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
 import { alphabet, alphabetUpper, symbols, numbers } from '../lib/collections';
@@ -43,7 +43,7 @@ export function generatePassword(config: PasswordConfig): string {
 
 export default function Home() {
   const [config, setConfig] = useState<PasswordConfig>({
-    length: 8,
+    length: 16,
     count: 1,
     includeSymbols: true,
     includeNumbers: true,
@@ -51,7 +51,11 @@ export default function Home() {
     includeLowerCase: true,
   });
 
-  const [password, setPassword] = useState(generatePassword(config));
+  const [password, setPassword] = useState<string>();
+
+  useEffect(() => {
+    setPassword(generatePassword(config));
+  }, []);
 
   return (
     <div className={styles.container}>
