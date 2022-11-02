@@ -1,3 +1,4 @@
+import type { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -13,7 +14,7 @@ interface PasswordConfig {
   includeLowerCase: boolean;
 }
 
-export function generatePassword(config: PasswordConfig): string {
+export const generatePassword = (config: PasswordConfig): string => {
   let totalCollection: string[] = [];
 
   if (config.includeUppercase) {
@@ -39,9 +40,9 @@ export function generatePassword(config: PasswordConfig): string {
   }
 
   return password;
-}
+};
 
-export default function Home() {
+const Home: NextPage = () => {
   const [config, setConfig] = useState<PasswordConfig>({
     length: 16,
     count: 1,
@@ -83,4 +84,6 @@ export default function Home() {
       </footer>
     </div>
   );
-}
+};
+
+export default Home;
